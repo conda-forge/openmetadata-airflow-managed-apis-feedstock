@@ -1,11 +1,11 @@
-About openmetadata-airflow-managed-apis
-=======================================
+About openmetadata-airflow-managed-apis-feedstock
+=================================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmetadata-airflow-managed-apis-feedstock/blob/main/LICENSE.txt)
 
 Home: https://open-metadata.org/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmetadata-airflow-managed-apis-feedstock/blob/main/LICENSE.txt)
 
 Summary: Airflow REST APIs to create and manage DAGS
 
@@ -145,5 +145,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@elanqo](https://github.com/elanqo/)
 * [@rxm7706](https://github.com/rxm7706/)
 

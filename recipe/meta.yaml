@@ -6,20 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openmetadata-airflow-managed-apis-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openmetadata-airflow-managed-apis-{{ version }}.tar.gz
   sha256: 0c7614ce9fed1f0f599a064383864600e143706a349b6b202689add2ff0c2a55
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - flask >=1.1.4
     - packaging >=21.2
     - setuptools >=58.3.0
@@ -29,6 +30,8 @@ requirements:
     - flask-admin >=1.6.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - openmetadata
     - plugins
